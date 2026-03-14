@@ -25,7 +25,7 @@
                         {% csrf_token %}
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Username" name="username" >
-                            <input type="password" class="form-control" placeholder="Username" name="psw" >
+                            <input type="password" class="form-control" placeholder="Password" name="password" >
                             <button class="btn btn-primary" type="submit">Login</button>
                             <a class="btn btn-link" href="{% url 'onlinecourse:registration' %}">Sign Up</a>
                         </div>
@@ -50,7 +50,7 @@
                 <label for="lastname"><b>Last Name</b></label>
                 <input type="text" class="form-control" placeholder="Enter Last Name: " name="lastname" required> <!--Style input with .form-control class -->
                 <label for="psw"><b>Password</b></label>
-                <input type="password" class="form-control" placeholder="Enter Password: " name="psw" required> <!--Style input with .form-control class -->
+                <input type="password" class="form-control" placeholder="Enter Password: " name="password" required> <!--Style input with .form-control class -->
                 {% if message %}
                 <div class="alert alert-warning"> <!--Style the message paragraph with .alert and .alert-warning class -->
                     {{ message }}

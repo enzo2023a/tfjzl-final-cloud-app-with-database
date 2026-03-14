@@ -20,7 +20,7 @@ def registration_request(request):
     elif request.method == 'POST':
         # Check if user exists
         username = request.POST['username']
-        password = request.POST['psw']
+        password = request.POST['password']
         first_name = request.POST['firstname']
         last_name = request.POST['lastname']
         user_exist = False
@@ -43,7 +43,7 @@ def login_request(request):
     context = {}
     if request.method == "POST":
         username = request.POST['username']
-        password = request.POST['psw']
+        password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
@@ -148,7 +148,7 @@ def show_exam_result(request, course_id, submission_id):
      questions = course.question_set.all() # Suponiendo que el curso tiene preguntas relacionadas
      for question in questions: 
          # Obtener todas las opciones correctas para la pregunta
-         correct_choices = question.choice_set.filte(is_correct=True)  
+         correct_choices = question.choice_set.filter(is_correct=True)  
          selected_choices = choices.filter(question=question) # Obtener las opciones seleccionadas por el usuario para la pregunta
 
         # Verificar si las opciones seleccionadas son las mismas que las correctas 
